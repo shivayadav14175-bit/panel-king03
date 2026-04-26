@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel King03</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d1b5e, #ffffff, #c1121f);
+      min-height: 100vh;
+      color: #222;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .login-box, .dashboard {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-top: 40px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0d1b5e;
+    }
+    .brand {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      color: #c1121f;
+      margin-top: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 2px solid #0d1b5e;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(90deg, #0d1b5e, #c1121f);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover { opacity: 0.9; }
+    .dashboard { display: none; }
+    .product-card {
+      border: 2px solid #0d1b5e;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin-top: 20px;
+      background: linear-gradient(145deg, #ffffff, #f0f4ff);
+    }
+    .price {
+      font-size: 2rem;
+      color: #c1121f;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .qr-section {
+      display: none;
+      text-align: center;
+      margin-top: 25px;
+      padding: 20px;
+      border-top: 2px dashed #0d1b5e;
+    }
+    .qr-section img {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 15px;
+      margin: 15px 0;
+    }
+    .support {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .support a {
+      color: #0d1b5e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .note {
+      margin-top: 20px;
+      background: #fff3cd;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #c1121f;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="brand">PANEL KING03</div><div class="login-box" id="loginBox">
+  <h2>Login / लॉग इन</h2>
+  <input type="text" placeholder="Username" id="username" />
+  <input type="password" placeholder="Password" id="password" />
+  <button onclick="login()">Login</button>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <h1>Welcome to Panel King03</h1>
+
+  <div class="product-card">
+    <h2>Dragon Panel</h2>
+    <p class="price">₹899</p>
+    <button onclick="showQR()">Pay Now</button>
+
+    <div class="qr-section" id="qrSection">
+      <h3>Scan & Pay</h3>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=8434663906-2@ybl&pn=Panel%20King03&am=899" alt="UPI QR Code">
+      <p><strong>UPI ID:</strong> 8434663906-2@ybl</p>
+      <p>Accepted on: Paytm, PhonePe, Navi</p>
+    </div>
+  </div>
+
+  <div class="support">
+    <h3>Customer Support</h3>
+    <p>Telegram: <a href="https://t.me/win033panel" target="_blank">@win033panel</a></p>
+  </div>
+
+  <div class="note">
+    <strong>Important Note / महत्वपूर्ण सूचना:</strong><br><br>
+    After completing the payment, please contact customer support and send your payment screenshot for verification and activation.<br><br>
+    पेमेंट करने के बाद कृपया कस्टमर सपोर्ट से संपर्क करें और अपना पेमेंट स्क्रीनशॉट भेजें, ताकि आपका ऑर्डर वेरीफाई और एक्टिव किया जा सके।
+  </div>
+</div>
+
+  </div>  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+      } else {
+        alert('Please enter username and password / कृपया यूज़रनेम और पासवर्ड दर्ज करें');
+      }
+    }
+
+    function showQR() {
+      document.getElementById('qrSection').style.display = 'block';
+    }
+  </script></body>
+</html>
