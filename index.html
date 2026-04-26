@@ -104,11 +104,16 @@
 </head>
 <body>
   <div class="container">
-    <div class="brand">PANEL KING03</div><div class="login-box" id="loginBox">
-  <h2>Login / लॉग इन</h2>
-  <input type="text" placeholder="Username" id="username" />
-  <input type="password" placeholder="Password" id="password" />
-  <button onclick="login()">Login</button>
+    <div class="login-box" id="loginBox">
+  <h2>Login with OTP / OTP से लॉग इन</h2>
+
+  <input type="text" id="mobile" placeholder="Enter Mobile Number / मोबाइल नंबर दर्ज करें" maxlength="10" />
+
+  <input type="text" id="otp" placeholder="Enter OTP / OTP दर्ज करें" maxlength="6" style="display: none;" />
+
+  <button id="sendOtpBtn" onclick="sendOTP()">Send OTP</button>
+  <button id="loginBtn" onclick="login()" style="display: none;">Verify & Login</button>
+</div>
 </div>
 
 <div class="dashboard" id="dashboard">
